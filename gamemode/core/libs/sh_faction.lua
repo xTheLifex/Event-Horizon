@@ -1,4 +1,3 @@
-
 ev.faction = ev.faction or {}
 ev.faction.teams = ev.faction.teams or {}
 ev.faction.indices = ev.faction.indices or {}
@@ -8,6 +7,7 @@ ev.faction.indices = ev.faction.indices or {}
 -- @realm shared
 -- @string directory The path to the factions files.
 function ev.faction.LoadFromDir(directory)
+    printv(string.format("Loading factions from directory: %s", directory))
     for _,v in ipairs(file.Find(directory.."/*.lua", "LUA")) do
         local niceName = v:sub(4, -5)
 
@@ -30,6 +30,7 @@ function ev.faction.LoadFromDir(directory)
 
             ev.faction.indices[FACTION.index] = FACTION
             ev.faction.teams[niceName] = FACTION
+            printv(string.format("Loaded faction [%s] with ID [%s]", niceName, FACTION.index))
         FACTION = nil
     end
 end

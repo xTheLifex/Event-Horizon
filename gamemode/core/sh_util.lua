@@ -37,6 +37,33 @@ function ev.util.IncludeDir(directory, fromLua)
 	end
 end
 
+/* -------------------------------------------------------------------------- */
+/*                                   Logging                                  */
+/* -------------------------------------------------------------------------- */
+
+ev.util.verbose = GM.version and GM.version == "indev" and true or false
+
+function ev.util.Log(msg)
+    print("[Event Horizon] " .. msg)
+end
+
+function ev.util.Error(msg)
+    error("[Event Horizon] " .. msg)
+end
+
+function ev.util.ErrorNoHalt(msg)
+    ErrorNoHalt("[Event Horizon] " .. msg)
+end
+
+function ev.util.LogVerbose(msg)
+    if (ev.util.verbose) then
+        ev.util.Log(msg)
+    end
+end
+
+-- Global for easy typing
+printv = ev.util.LogVerbose
+
 
 /* -------------------------------------------------------------------------- */
 /*                                 Pick Random                                */
