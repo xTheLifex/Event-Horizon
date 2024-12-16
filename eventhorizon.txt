@@ -1,0 +1,13 @@
+"sandbox"
+{
+	"base"		"base"
+	"title"		"Event Horizon"
+	"category"	"other"
+	"maps"		"^lw_|^eh_|^ev_"
+	"menusystem"	"1"
+
+	"settings"
+	{
+
+	}
+}
